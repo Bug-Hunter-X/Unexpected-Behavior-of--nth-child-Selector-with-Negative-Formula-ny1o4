@@ -1,0 +1,18 @@
+The solution uses a valid `:nth-child` formula to select the first three list items:
+
+```css
+.container li:nth-child(-n+3) {
+  color: red;
+}
+/*Corrected CSS*/
+.container li:nth-child(n) {
+  color: blue;
+}
+.container li:nth-child(1),
+.container li:nth-child(2),
+.container li:nth-child(3) {
+  color: red;
+}
+```
+
+This approach explicitly targets the first three list items using `:nth-child(1)`, `:nth-child(2)`, and `:nth-child(3)`, eliminating the need for a potentially problematic formula. Alternatively, for a more concise solution, consider using other CSS selectors such as the first-child, :nth-of-type selectors, or a combination of selectors for more complex scenarios.
