@@ -1,0 +1,11 @@
+The following CSS code snippet demonstrates an uncommon error that can occur when using the `:nth-child` pseudo-class selector with a formula that generates negative values.
+
+```css
+.container li:nth-child(-n+3) {
+  color: red;
+}
+```
+
+This selector intends to style the first three list items. However,  `-n+3` in `:nth-child(-n+3)` is not a valid formula and will not select the intended elements; it results in unexpected behavior or no styling at all depending on the browser's interpretation.
+
+The problem lies in using a negative value in the `an+b` formula.  While `an+b` can represent negative indexes in some contexts, `:nth-child` requires a positive or zero value to successfully target elements.
